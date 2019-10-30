@@ -13,7 +13,7 @@ MIN_VALUE = -20
 MAX_VALUE = 20
 BITS_LENGTH = 10
 TOURNAMENT_NUMBER = 2
-TAXA_MUTACAO = 0.05
+TAXA_MUTACAO = 0.01
 
 
 class Particle:
@@ -37,16 +37,10 @@ class Particle:
 
     def crossover(self, outro):
         cut_point = random.randint(0, BITS_LENGTH)
-
-#        print('pai1 bin = ' + self.bin + ' pai2 bin = ' + outro.bin)
-
         self_1_part = self.bin[0:cut_point]
         self_2_part = self.bin[cut_point:BITS_LENGTH]
         outro_1_part = outro.bin[0:cut_point]
         outro_2_part = outro.bin[cut_point:BITS_LENGTH]
-
-#        print('pai1 1 parte = ' + self_1_part + ' pai1 2 parte = ' + self_2_part)
-#        print('pai2 1 parte = ' + outro_1_part + ' pai2 2 parte = ' + outro_2_part)
 
         self.bin = self_1_part + outro_2_part
         outro.bin = outro_1_part + self_2_part
@@ -65,7 +59,6 @@ class Particle:
 def main():
     interation_best = []
     for i in range(INTERACOES):
-        pai_elite = None
         population = []
         for individual in range(POPULATION_SIZE):
             population.append(Particle(random.randint(0, 1024)))
@@ -79,15 +72,9 @@ def main():
             for individual in population:
                 individual.calcFitness()
             population.sort(key=lambda x: x.fitness)
-            #print("população")
-            #for p in population:
-            #    print(p.fitness)
 
             population_new = []
             while len(population_new) < POPULATION_SIZE:
-                #print("====================================")
-                #print("\n\niniciando escolha de pais \n")
-
                 #Selecionando os dois pais para realizar o crossover
                 pai1 = None
                 pai2 = None
@@ -109,20 +96,13 @@ def main():
                 pai2.mutacao()
                 pai1.calcFitness()
                 pai2.calcFitness()
-                #print("geração " + str(pai1.fitness) + " e " + str(pai2.fitness) + "\n")
+
                 population_new.append(copy.deepcopy(pai1))
                 population_new.append(copy.deepcopy(pai2))
                 del (pai1)
                 del (pai2)
 
-                #print("popuplação atual \n")
-                #for p in population_new:
-                #    print(p.fitness)
-            #print("população pré elitismo")
-            #for p in population_new:
-            #    print(p.fitness)
             population_new.sort(key=lambda x: x.fitness)
-            #print("\n Pai Elite" + str(pai_elite.fitness))
             population_new.sort(key=lambda x: x.fitness)
             if pai_elite.fitness < population_new[0].fitness:
                 population_new[0] = copy.copy(pai_elite)
@@ -131,8 +111,6 @@ def main():
             population.sort(key=lambda x: x.fitness)
             pai_elite = copy.copy(population[0])
 
-            #for p in population_new:
-            #    print(p.fitness)
             population_new.sort(key=lambda x: x.fitness)
         interation_best.append(copy.deepcopy(population[0].fitness))
         print("\n BEST OF GENERATION = " + str(population[0].fitness))
