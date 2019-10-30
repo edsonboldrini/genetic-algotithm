@@ -6,14 +6,14 @@ import copy
 
 from ast import literal_eval
 
-INTERACOES = 10
+INTERACOES = 100
 POPULATION_SIZE = 10
 GENERATIONS_NUMBER = 10
 MIN_VALUE = -20
 MAX_VALUE = 20
 BITS_LENGTH = 10
 TOURNAMENT_NUMBER = 2
-TAXA_MUTACAO = 0.01
+TAXA_MUTACAO = 0.2
 
 
 class Particle:
@@ -113,7 +113,7 @@ def main():
 
             population_new.sort(key=lambda x: x.fitness)
         interation_best.append(copy.deepcopy(population[0].fitness))
-        print("\n BEST OF GENERATION = " + str(population[0].fitness))
+        #print("\n BEST OF GENERATION = " + str(population[0].fitness))
     if(len(interation_best) > 0):
         print("Média = " + str(sum(interation_best) / len(interation_best)))
 
