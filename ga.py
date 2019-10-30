@@ -15,6 +15,7 @@ BITS_LENGTH = 10
 TOURNAMENT_NUMBER = 2
 TAXA_MUTACAO = 0.05
 
+
 class Particle:
     bin = ''
     fitness = 0.0
@@ -35,7 +36,7 @@ class Particle:
         self.fitness = math.cos(self.normalize())*self.normalize()+2
 
     def crossover(self, outro):
-        cut_point = BITS_LENGTH//2
+        cut_point = random.randint(0, BITS_LENGTH)
 
 #        print('pai1 bin = ' + self.bin + ' pai2 bin = ' + outro.bin)
 
@@ -135,7 +136,8 @@ def main():
             population_new.sort(key=lambda x: x.fitness)
         interation_best.append(copy.deepcopy(population[0].fitness))
         print("\n BEST OF GENERATION = " + str(population[0].fitness))
-
+    if(len(interation_best) > 0):
+        print("Média = " + str(sum(interation_best) / len(interation_best)))
 
 
 
