@@ -27,3 +27,11 @@ Para chegar ao objetivo de minimizar ou maximizar uma dada função, o algortimo
 
 ## Classe que representa o indivíduo
 ![enter image description here](https://github.com/edsonboldrini/genetic-algotithm/blob/master/code8.png?raw=true)
+
+## Resultados obtidos
+
+### 10-10
+![enter image description here](https://github.com/edsonboldrini/genetic-algotithm/blob/master/10-10.PNG?raw=true)
+
+### 20-10
+![enter image description here](https://github.com/edsonboldrini/genetic-algotithm/blob/master/20-10.PNG?raw=true)
