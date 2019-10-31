@@ -2,8 +2,6 @@ import random
 import math
 import random
 import copy
-
-
 from ast import literal_eval
 
 INTERACOES = 10
