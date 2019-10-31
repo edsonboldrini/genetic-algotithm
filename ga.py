@@ -60,7 +60,7 @@ def main():
     for i in range(INTERACOES):
         population = []
         for individual in range(POPULATION_SIZE):
-            population.append(Particle(random.randint(0, 1024)))
+            population.append(Particle(random.randint(0, BITS_LENGTH)))
         population.sort(key=lambda x: x.fitness)
         pai_elite = copy.copy(population[0])
 
