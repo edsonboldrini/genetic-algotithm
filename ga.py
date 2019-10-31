@@ -56,6 +56,7 @@ class Particle:
                     bin_list[i] = '0'
         self.bin = ''.join(bin_list)
 
+
 def main():
     interation_best = []
     for i in range(INTERACOES):
@@ -75,19 +76,21 @@ def main():
 
             population_new = []
             while len(population_new) < POPULATION_SIZE:
-                #Selecionando os dois pais para realizar o crossover
+                # Selecionando os dois pais para realizar o crossover
                 pai1 = None
                 pai2 = None
 
                 tournament_participants = []
                 for indice_tournament in range(TOURNAMENT_NUMBER):
-                    tournament_participants.append(population[random.randint(0, len(population)-1)])
+                    tournament_participants.append(
+                        population[random.randint(0, len(population)-1)])
                 tournament_participants.sort(key=lambda x: x.fitness)
                 pai1 = tournament_participants[0]
 
                 tournament_participants = []
                 for indice_tournament in range(TOURNAMENT_NUMBER):
-                    tournament_participants.append(population[random.randint(0, len(population)-1)])
+                    tournament_participants.append(
+                        population[random.randint(0, len(population)-1)])
                 tournament_participants.sort(key=lambda x: x.fitness)
                 pai2 = tournament_participants[0]
 
@@ -113,16 +116,8 @@ def main():
 
             population_new.sort(key=lambda x: x.fitness)
         interation_best.append(copy.deepcopy(population[0].fitness))
-        #print("\n BEST OF GENERATION = " + str(population[0].fitness))
     if(len(interation_best) > 0):
         print("Média = " + str(sum(interation_best) / len(interation_best)))
-
-
-
-
-    #for individual in population:
-     # print(individual.bin + " - " + str(individual.bin10ToDec()) + " - " + str(individual.normalize()) + " Fitness = " + str(individual.fitness))
-    #print("best value = " + best.fitness + "of x value = " + best.normalize())
 
 
 if __name__ == "__main__":
