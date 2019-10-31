@@ -6,7 +6,7 @@ import copy
 
 from ast import literal_eval
 
-INTERACOES = 100
+INTERACOES = 10
 POPULATION_SIZE = 10
 GENERATIONS_NUMBER = 10
 MIN_VALUE = -20
