@@ -43,3 +43,6 @@ Para chegar ao objetivo de minimizar ou maximizar uma dada função, o algortimo
 ## Alterações no Crossover e Mutação
 
 Utilizamos um crossover aritmético e uma mutação de limite
+
+### Mudanças no código
+![enter image description here](https://github.com/edsonboldrini/genetic-algotithm/blob/master/code9.png?raw=true)
