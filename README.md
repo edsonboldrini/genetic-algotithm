@@ -46,3 +46,12 @@ Utilizamos um crossover aritmético e uma mutação de limite
 
 ### Mudanças no código
 ![enter image description here](https://github.com/edsonboldrini/genetic-algotithm/blob/master/code9.png?raw=true)
+
+### Comparação entre a Versão 1 e a Versão 2
+
+Valor médio dos resultados:
+![enter image description here](https://github.com/edsonboldrini/genetic-algotithm/blob/master/Comparativo%20m%C3%A9dia%20vers%C3%B5es.PNG?raw=true)
+
+Gráfico de evolução do Gbest
+![enter image description here](https://github.com/edsonboldrini/genetic-algotithm/blob/master/Evolu%C3%A7%C3%A3o%20do%20Gbest%20ao%20longo%20das%20execu%C3%A7%C3%B5es%20v1.PNG?raw=true)
+![enter image description here](https://github.com/edsonboldrini/genetic-algotithm/blob/master/Evolu%C3%A7%C3%A3o%20do%20Gbest%20ao%20longo%20das%20execu%C3%A7%C3%B5es%20v2.PNG?raw=true)
